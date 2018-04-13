@@ -5,7 +5,6 @@ package com.esipovich.challenge.palindrome;
  *
  * Create a function which checks if a given word is palindrome. Character case should be ignored
  *
- * Level: easy
  */
 
 public class Palindrome {

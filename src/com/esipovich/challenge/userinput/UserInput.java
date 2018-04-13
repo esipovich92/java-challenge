@@ -14,7 +14,6 @@ package com.esipovich.challenge.userinput;
  * Inherits from StringInput
  * Overrides the add method so that each non-numeric character is ignored
  *
- * Level: easy
  */
 
 public class UserInput {
