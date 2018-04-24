@@ -9,6 +9,8 @@ import java.util.concurrent.Callable;
  * - a chicken lays an egg, that will hatch into a new chicken
  * - eggs from other types of birds should hatch into a new bird of their parent type
  * - hatching an egg for the second time throws an IllegalStateException
+ *
+ * https://www.testdome.com/d/java-interview-questions/4
  */
 
 public interface Bird {
