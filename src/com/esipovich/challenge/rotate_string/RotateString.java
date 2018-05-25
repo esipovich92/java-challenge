@@ -13,6 +13,7 @@ public class RotateString {
 
     public static void main(String[] args) {
         System.out.println(rotateString("abcde", "cdeab"));
+        System.out.println(rotateStringSimplified("abcde", "cdeab"));
     }
 
     private static boolean rotateString(String firstString, String secondString) {
@@ -29,5 +30,9 @@ public class RotateString {
             }
         }
         return false;
+    }
+
+    private static boolean rotateStringSimplified(String firstString, String secondString) {
+        return (firstString + firstString).contains(secondString);
     }
 }
