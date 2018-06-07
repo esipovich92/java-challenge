@@ -15,7 +15,7 @@ public class ReverseString {
         System.out.println(reverseString("hello"));
     }
 
-    public static String reverseString(String s) {
+    private static String reverseString(String s) {
         return new StringBuilder(s).reverse().toString();
     }
 }
