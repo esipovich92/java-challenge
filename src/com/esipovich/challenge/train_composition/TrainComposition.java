@@ -2,6 +2,8 @@ package com.esipovich.challenge.train_composition;
 
 import java.util.ArrayDeque;
 import java.util.Deque;
+import java.util.LinkedList;
+import java.util.List;
 
 /**
  * @author Artem Esipovich 15.06.2018
@@ -16,22 +18,27 @@ import java.util.Deque;
  */
 
 public class TrainComposition {
-    private Deque<Integer> train = new ArrayDeque<>();
+    //private Deque<Integer> train = new ArrayDeque<>();
+    private LinkedList<Integer> linkedTrain = new LinkedList<>();
 
     private void attachWagonFromLeft(int wagonId) {
-        train.addFirst(wagonId);
+        //train.addFirst(wagonId);
+        linkedTrain.addFirst(wagonId);
     }
 
     private void attachWagonFromRight(int wagonId) {
-        train.addLast(wagonId);
+        //train.addLast(wagonId);
+        linkedTrain.addLast(wagonId);
     }
 
     private int detachWagonFromLeft() {
-        return train.pollFirst();
+        return linkedTrain.removeFirst();
+        //return train.pollFirst();
     }
 
     private int detachWagonFromRight() {
-        return train.pollLast();
+        return linkedTrain.removeLast();
+        //return train.pollLast();
     }
 
     public static void main(String[] args) {
