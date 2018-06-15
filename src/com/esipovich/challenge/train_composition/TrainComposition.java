@@ -1,9 +1,6 @@
 package com.esipovich.challenge.train_composition;
 
-import java.util.ArrayDeque;
-import java.util.Deque;
 import java.util.LinkedList;
-import java.util.List;
 
 /**
  * @author Artem Esipovich 15.06.2018
