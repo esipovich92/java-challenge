@@ -37,11 +37,11 @@ public class Path {
         folderTree.removeFirst();
     }
 
-    public String getPath() {
+    private String getPath() {
         return path;
     }
 
-    public void cd(String newPath) {
+    private void cd(String newPath) {
         if (newPath.startsWith("/")){
             path = newPath;
             return;
