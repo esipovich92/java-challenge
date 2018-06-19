@@ -65,6 +65,10 @@ public class Path {
         Path path = new Path("/a/b/c/d");
         path.cd("/b/d");
         System.out.println(path.getPath());
+        path.cd("../../d");
+        System.out.println(path.getPath());
+        path.cd("/");
+        System.out.println(path.getPath());
     }
 
 }
