@@ -21,7 +21,16 @@ import java.util.Random;
 
 public class DataManipulation {
 
-    public String replaceLetters(String letters) {
+    public static void main(String[] args) {
+        System.out.println(replaceLetters("???"));
+        System.out.println(replaceLetters("Test?"));
+        System.out.println(replaceNumbers("###"));
+        System.out.println(replaceNumbers("Test#"));
+        System.out.println(replaceAll("?#?#?#"));
+        System.out.println(replaceAll("Test?#"));
+    }
+
+    public static String replaceLetters(String letters) {
         StringBuilder letterifiedString = new StringBuilder(letters);
         Random randomNumber = new Random();
         for (int i = 0; i < letters.length(); i++){
@@ -34,7 +43,7 @@ public class DataManipulation {
         return letterifiedString.toString();
     }
 
-    public String replaceNumbers(String numbers) {
+    public static String replaceNumbers(String numbers) {
         StringBuilder numerifiedString = new StringBuilder();
         Random randomNumber = new Random();
         for (int i = 0; i < numbers.length(); i++){
@@ -47,7 +56,7 @@ public class DataManipulation {
         return numerifiedString.toString();
     }
 
-    public String replaceAll(String line) {
+    public static String replaceAll(String line) {
         StringBuilder bothifiedString = new StringBuilder(line);
         Random randomNumber = new Random();
         for (int i = 0; i < line.length(); i++){
