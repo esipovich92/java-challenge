@@ -30,7 +30,7 @@ public class DataManipulation {
         System.out.println(replaceAll("Test?#"));
     }
 
-    public static String replaceLetters(String letters) {
+    private static String replaceLetters(String letters) {
         StringBuilder letterifiedString = new StringBuilder(letters);
         Random randomNumber = new Random();
         for (int i = 0; i < letters.length(); i++){
@@ -43,7 +43,7 @@ public class DataManipulation {
         return letterifiedString.toString();
     }
 
-    public static String replaceNumbers(String numbers) {
+    private static String replaceNumbers(String numbers) {
         StringBuilder numerifiedString = new StringBuilder();
         Random randomNumber = new Random();
         for (int i = 0; i < numbers.length(); i++){
@@ -56,7 +56,7 @@ public class DataManipulation {
         return numerifiedString.toString();
     }
 
-    public static String replaceAll(String line) {
+    private static String replaceAll(String line) {
         StringBuilder bothifiedString = new StringBuilder(line);
         Random randomNumber = new Random();
         for (int i = 0; i < line.length(); i++){
