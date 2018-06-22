@@ -14,6 +14,7 @@ package com.esipovich.challenge.number_to_console;
  *    *    *   *   *  *     *      *   *   *      *
  *    *   ***   ***   *     *****   ***   ***     *
  *
+ * Additional: make so, that a number would consits of little numbers instead of '*'
  */
 
 public class NumberToConsole {
