@@ -1,5 +1,8 @@
 package com.esipovich.challenge.string_compression;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * @author Artem Esipovich 26.06.2018
  *
@@ -40,11 +43,22 @@ package com.esipovich.challenge.string_compression;
 public class StringCompression {
 
     public static void main(String[] args) {
-
+        System.out.println(compress(new char[]{'a','a','b','b','c','c','c'}));
+        System.out.println(compress(new char[]{'a'}));
+        System.out.println(compress(new char[]{'a','b','b','b','b','b','b','b','b','b','b','b','b'}));
     }
 
     private static int compress(char[] chars){
-
-        return 1;
+        Map<Character, Integer> occurencies = new HashMap<>();
+        for (char symbol : chars) {
+            occurencies.merge(symbol, 1, Integer::sum);
+        }
+        StringBuilder result = new StringBuilder();
+        for (Map.Entry<Character, Integer> entry : occurencies.entrySet()){
+            result.append(entry.getKey());
+            result.append(entry.getValue() == 1 ? "" : entry.getValue());
+        }
+        chars = result.toString().toCharArray();
+        return chars.length;
     }
 }
