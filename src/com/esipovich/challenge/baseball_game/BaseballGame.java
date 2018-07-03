@@ -33,5 +33,31 @@ import java.util.Stack;
  */
 
 public class BaseballGame {
+    public static void main(String[] args) {
+        System.out.println(calPoints(new String[]{"5","2","C","D","+"}));
+        System.out.println(calPoints(new String[]{"5","-2","4","C","D","9","+","+"}));
+    }
 
+    private static int calPoints(String[] operations) {
+        Stack<Integer> points = new Stack<>();
+        for (String operation : operations){
+            if ("+".equals(operation)){
+                int lastPoint = points.pop();
+                int newLastPoint = lastPoint + points.peek();
+                points.push(lastPoint);
+                points.push(newLastPoint);
+            } else if ("D".equals(operation)){
+                points.push(points.peek() * 2);
+            } else if ("C".equals(operation)){
+                points.pop();
+            } else {
+                points.push(Integer.parseInt(operation));
+            }
+        }
+        int sum = 0;
+        while (!points.empty()){
+            sum = sum + points.pop();
+        }
+        return sum;
+    }
 }
