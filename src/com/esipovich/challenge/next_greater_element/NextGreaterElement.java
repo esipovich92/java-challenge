@@ -1,5 +1,7 @@
 package com.esipovich.challenge.next_greater_element;
 
+import java.util.Arrays;
+
 /**
  * @author Artem Esipovich 05.07.2018
  *
@@ -22,4 +24,27 @@ package com.esipovich.challenge.next_greater_element;
 
 public class NextGreaterElement {
 
+    public static void main(String[] args) {
+        System.out.println(Arrays.toString(nextGreaterElement(new int[]{4, 1, 2}, new int[]{1, 3, 4, 2})));
+        System.out.println(Arrays.toString(nextGreaterElement(new int[]{2, 4}, new int[]{1, 2, 3, 4})));
+    }
+
+    private static int[] nextGreaterElement(int[] nums1, int[] nums2) {
+        int[] finalArray = new int[nums1.length];
+        for (int i = 0; i < nums1.length; i++){
+            int greaterNumber = -1;
+            boolean isNumberFound = false;
+            for (int numberFromSecondArray : nums2) {
+                if (numberFromSecondArray == nums1[i]) {
+                    isNumberFound = true;
+                }
+                if (isNumberFound && numberFromSecondArray > nums1[i]) {
+                    greaterNumber = numberFromSecondArray;
+                    break;
+                }
+            }
+            finalArray[i] = greaterNumber;
+        }
+        return finalArray;
+    }
 }
