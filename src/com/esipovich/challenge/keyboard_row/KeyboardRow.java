@@ -21,9 +21,12 @@ import java.util.*;
  */
 
 public class KeyboardRow {
-    private static final Set<Character> FIRST_LINE = new HashSet<>(Arrays.asList('q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p'));
-    private static final Set<Character> SECOND_LINE = new HashSet<>(Arrays.asList('a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l'));
-    private static final Set<Character> THIRD_LINE = new HashSet<>(Arrays.asList('z', 'x', 'c', 'v', 'b', 'n', 'm'));
+    private static final Set<Character> FIRST_LINE =
+            new HashSet<>(Arrays.asList('q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p'));
+    private static final Set<Character> SECOND_LINE =
+            new HashSet<>(Arrays.asList('a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l'));
+    private static final Set<Character> THIRD_LINE =
+            new HashSet<>(Arrays.asList('z', 'x', 'c', 'v', 'b', 'n', 'm'));
 
     public static void main(String[] args) {
         System.out.println(Arrays.toString(findWords(new String[]{"Hello", "Alaska", "Dad", "Peace"})));
