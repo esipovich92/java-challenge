@@ -1,5 +1,7 @@
 package com.esipovich.challenge.flipping_an_image;
 
+import java.util.Arrays;
+
 /**
  * @author Artem Esipovich 09.07.2018
  *
@@ -28,5 +30,33 @@ package com.esipovich.challenge.flipping_an_image;
  */
 
 public class FlippingAnImage {
+    public static void main(String[] args) {
+        System.out.println(Arrays.deepToString(flipAndInvertImage(new int[][]{{1, 1, 0}, {1, 0, 1}, {0, 0, 0}})));
+        System.out.println(Arrays.deepToString(flipAndInvertImage(new int[][]{{1,1,0,0},{1,0,0,1},{0,1,1,1},{1,0,1,0}})));
+    }
 
+    private static int[][] flipAndInvertImage(int[][] sourceArray) {
+        for (int[] internalArray : sourceArray){
+            flipRow(internalArray);
+            invertRow(internalArray);
+        }
+        return sourceArray;
+    }
+
+    private static void flipRow(int[] arrayToFlip){
+        for (int i = 0, j = arrayToFlip.length - 1; ; i++, j--){
+            if (i >= j){
+                return;
+            }
+            int iElement = arrayToFlip[i];
+            arrayToFlip[i] = arrayToFlip[j];
+            arrayToFlip[j] = iElement;
+        }
+    }
+
+    private static void invertRow(int[] arrayToInvert){
+        for (int i = 0; i < arrayToInvert.length; i++){
+            arrayToInvert[i] = arrayToInvert[i] == 1 ? 0 : 1;
+        }
+    }
 }
