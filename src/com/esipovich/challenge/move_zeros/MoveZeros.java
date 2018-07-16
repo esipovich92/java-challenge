@@ -1,6 +1,8 @@
 package com.esipovich.challenge.move_zeros;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 /**
  * @author Artem Esipovich 12.07.2018
@@ -23,6 +25,9 @@ public class MoveZeros {
         int[] arrayWithZeros = new int[]{0,1,0,3,12};
         moveZeroes(arrayWithZeros);
         System.out.println(Arrays.toString(arrayWithZeros));
+        arrayWithZeros = new int[]{0,1,0,3,12};
+        moveZeroesOptimized(arrayWithZeros);
+        System.out.println(Arrays.toString(arrayWithZeros));
     }
 
     private static void moveZeroes(int[] nums) {
@@ -33,6 +38,22 @@ public class MoveZeros {
                     nums[j + 1] = 0;
                 }
             }
+        }
+    }
+
+    private static void moveZeroesOptimized(int[] nums) {
+        List<Integer> zerosMoved = new ArrayList<>();
+        int lastIndex = 0;
+        for (int num : nums) {
+            if (num != 0) {
+                zerosMoved.add(lastIndex, num);
+                lastIndex += 1;
+            } else {
+                zerosMoved.add(0);
+            }
+        }
+        for (int i = 0; i < nums.length; i++){
+            nums[i] = zerosMoved.get(i);
         }
     }
 }
