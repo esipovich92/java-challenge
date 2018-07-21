@@ -18,4 +18,13 @@ package com.esipovich.challenge.nim_game;
  */
 
 public class NimGame {
+    public static void main(String[] args) {
+        System.out.println(canWinNim(4));
+        System.out.println(canWinNim(8));
+        System.out.println(canWinNim(13));
+    }
+
+    private static boolean canWinNim(int stonesCount) {
+        return stonesCount % 4 != 0;
+    }
 }
