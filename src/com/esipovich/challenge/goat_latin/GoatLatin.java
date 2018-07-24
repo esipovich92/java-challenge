@@ -1,5 +1,9 @@
 package com.esipovich.challenge.goat_latin;
 
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
+
 /**
  * @author Artem Esipovich 24.07.2018
  *
@@ -26,4 +30,27 @@ package com.esipovich.challenge.goat_latin;
  */
 
 public class GoatLatin {
+    private static final Set<Character> VOWELS = new HashSet<>(Arrays.asList('a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'));
+
+    public static void main(String[] args) {
+        System.out.println(toGoatLatin("I speak Goat Latin"));
+        System.out.println(toGoatLatin("The quick brown fox jumped over the lazy dog"));
+        System.out.println(toGoatLatin("yDumm"));
+    }
+
+    private static String toGoatLatin(String sentence) {
+        StringBuilder goatLatin = new StringBuilder();
+        StringBuilder lettersToAdd = new StringBuilder("a");
+        for (String word : sentence.split(" ")) {
+            char firstLetter = word.charAt(0);
+            if (!VOWELS.contains(firstLetter)){
+                word = word.substring(1) + firstLetter;
+            }
+            goatLatin.append(word);
+            goatLatin.append("ma").append(lettersToAdd).append(" ");
+            lettersToAdd.append("a");
+        }
+        goatLatin.deleteCharAt(goatLatin.length() - 1);
+        return goatLatin.toString();
+    }
 }
